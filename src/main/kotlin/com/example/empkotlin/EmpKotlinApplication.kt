@@ -6,16 +6,16 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @SpringBootApplication
-open class EmpKotlinApplication
+class EmpKotlinApplication
 
 fun main(args: Array<String>) {
     runApplication<EmpKotlinApplication>(*args)
 }
 
 @Configuration
-open class DbInitialize(val employeeRepo: EmployeeRepo) {
+class DbInitialize(val employeeRepo: EmployeeRepo) {
     @Bean
-    open fun init() {
+    fun init() {
         employeeRepo.saveAll(
             listOf(
                 Employee(firstName = "Saro", lastName = "M", salary = 15000.00),
