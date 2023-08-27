@@ -14,8 +14,8 @@
     <name>emp-kotlin</name>
     <description>emp-kotlin</description>
     <properties>
-        <java.version>19</java.version>
-        <kotlin.version>1.8.22</kotlin.version>
+        <java.version>20</java.version>
+        <kotlin.version>1.9.0</kotlin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -68,6 +68,7 @@
                     <compilerPlugins>
                         <plugin>spring</plugin>
                         <plugin>jpa</plugin>
+                        <plugin>no-arg</plugin>
                     </compilerPlugins>
                 </configuration>
                 <dependencies>

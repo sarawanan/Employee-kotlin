@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository
 @Entity
 class Employee(
     @GeneratedValue(strategy = GenerationType.AUTO) @Id val id: Long? = null,
-    val firstName: String,
-    val lastName: String,
-    val salary: Double
+    var firstName: String,
+    var lastName: String,
+    var salary: Double
 )
 
 @Repository
-interface EmployeeRepo: JpaRepository<Employee, Long>
+interface EmployeeRepo : JpaRepository<Employee, Long>
