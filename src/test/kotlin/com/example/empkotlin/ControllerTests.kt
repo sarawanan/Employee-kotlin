@@ -78,4 +78,11 @@ class EmployeeControllerTests @Autowired constructor(
         mvc.perform(delete("/api/employee/1"))
             .andExpect(status().isOk)
     }
+
+    @Test
+    fun `delete employee by id not found`() {
+        Mockito.`when`(employeeRepo.getReferenceById(4)).thenThrow(EntityNotFoundException::class.java)
+        mvc.perform(delete("/api/employee/4"))
+            .andExpect(status().isNotFound)
+    }
 }

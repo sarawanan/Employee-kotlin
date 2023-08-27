@@ -26,5 +26,5 @@ class EmployeeController(private val employeeRepo: EmployeeRepo) {
             })
 
     @DeleteMapping("/api/employee/{id}")
-    fun deleteEmployee(@PathVariable id: Long) = employeeRepo.deleteById(id)
+    fun deleteEmployee(@PathVariable id: Long) = employeeRepo.delete(employeeRepo.getReferenceById(id))
 }

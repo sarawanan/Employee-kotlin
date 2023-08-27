@@ -44,4 +44,11 @@ class IntegrationTests @Autowired constructor(
         assertEquals(HttpStatus.OK, entity.statusCode)
         assertEquals(updatedEmp.salary, entity.body?.salary)
     }
+
+    @Test
+    fun `delete employee`() {
+        restTemplate.delete("/api/employee/1")
+        val entity = restTemplate.getForEntity("/api/employee/1", String::class.java)
+        assertEquals(HttpStatus.NOT_FOUND, entity.statusCode)
+    }
 }
